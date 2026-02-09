@@ -1,56 +1,56 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /* the following sets up the light and dark mode*/
 :root {
-  color-scheme: light dark;
+	color-scheme: light dark;
 }
 
 body {
-  background-color: light-dark(#fff, #272833);
+	background-color: light-dark(#fff, #272833);
 }
 
 #container {
-  height: 100vh;
-  width: 100vw;
+	height: 100vh;
+	width: 100vw;
 }
 
 aside {
-  background: light-dark(rgba(0, 0, 0, 10%), rgba(0, 0, 0, 70%));
-  padding: 4px;
-  position: absolute;
-  top: 0;
+	background: light-dark(rgba(0, 0, 0, 10%), rgba(0, 0, 0, 70%));
+	padding: 4px;
+	position: absolute;
+	top: 0;
 }
 
 #function {
-  box-shadow: 2px 2px 2px light-dark(#004, #4444);
-  border-bottom-right-radius: 4px;
-  padding: 8px;
+	box-shadow: 2px 2px 2px light-dark(#004, #4444);
+	border-bottom-right-radius: 4px;
+	padding: 8px;
 }
 
 #controls {
-  box-shadow: -2px 2px 2px light-dark(#004, #4444);
-  border-bottom-left-radius: 4px;
-  padding: 8px;
-  right: 0;
+	box-shadow: -2px 2px 2px light-dark(#004, #4444);
+	border-bottom-left-radius: 4px;
+	padding: 8px;
+	right: 0;
 
-  &.hidden {
-    display: none;
-  }
+	&.hidden {
+		display: none;
+	}
 
-  /* #controls.a (<div id="controls" class="a"></div>)
+	/* #controls.a (<div id="controls" class="a"></div>)
   &.a {
   }
   */
 
-  caption {
-    font-weight: bold;
-  }
+	caption {
+		font-weight: bold;
+	}
 
-  td:first-child {
-    padding-right: 4px;
-    text-align: right;
-  }
+	td:first-child {
+		padding-right: 4px;
+		text-align: right;
+	}
 }

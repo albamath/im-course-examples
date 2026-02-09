@@ -1,121 +1,118 @@
 /*reset styles*/
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    background-color: #eee;
-    font-family: sans-serif;
-    padding: 0;
-    min-height: 100vh;
+	background-color: #eee;
+	font-family: sans-serif;
+	padding: 0;
+	min-height: 100vh;
 }
 
 main {
-    background-color: white;
-    border: 1px solid red;
-    border-style: none solid;
-    /*margin: 12px 24px 32px;*/
-    /* shorthand for
+	background-color: white;
+	border: 1px solid red;
+	border-style: none solid;
+	/*margin: 12px 24px 32px;*/
+	/* shorthand for
     margin-top: 12px;
     margin-left: 24px;
     margin-right: 24px;
     margin-bottom: 32px;
     */
-    margin: 0 auto;
-    /* viewport units - unfortunately these viewport units are slightly deprecated*/
-    /* they do not work in safari and mobile devices */
-    max-width: 75%;
-    min-height: 100vh;
-    padding: 1em;
+	margin: 0 auto;
+	/* viewport units - unfortunately these viewport units are slightly deprecated*/
+	/* they do not work in safari and mobile devices */
+	max-width: 75%;
+	min-height: 100vh;
+	padding: 1em;
 }
 
 h1 {
-    padding: 24px 0;
+	padding: 24px 0;
 }
 
 p {
-    margin: 1 0;
+	margin: 1 0;
 }
 
 /* you use hashtag # to target something with an id */
 /* ids have the highest specificity */
 #table-container {
-    display: flex;
-    overflow: hidden;
-    align-items: flex-start;
-    justify-content: space-around;
-    gap: 2px;
-   
+	display: flex;
+	overflow: hidden;
+	align-items: flex-start;
+	justify-content: space-around;
+	gap: 2px;
 }
 
 /* . is what you use to target a class*/
 /* and all its descendents ! */
 .bases-table {
-    /*nested styles are supported in more recent browsers*/
-    border-collapse: collapse;
-    /*-- is for introducing a css variable*/
-    --radius: 4px;
-    /* Why this don't work for rounding the corners of each table ?*/
-    /* border-radius: var(--radius); */
-    /* with > we target only th inside thead */
-    >thead th {
-        background-color: rgb(100, 100, 222);
-    }
+	/*nested styles are supported in more recent browsers*/
+	border-collapse: collapse;
+	/*-- is for introducing a css variable*/
+	--radius: 4px;
+	/* Why this don't work for rounding the corners of each table ?*/
+	/* border-radius: var(--radius); */
+	/* with > we target only th inside thead */
+	> thead th {
+		background-color: rgb(100, 100, 222);
+	}
 
-    td {
-        font-family: monospace;
-    }
+	td {
+		font-family: monospace;
+	}
 
-    th,
-    td {
-        /* comma , combines */
-        text-align: right;
-        padding: .5em 1em;
-        /* not neat with rounded corners */
-        /* border-right: 1px solid green; */
-    }
+	th,
+	td {
+		/* comma , combines */
+		text-align: right;
+		padding: 0.5em 1em;
+		/* not neat with rounded corners */
+		/* border-right: 1px solid green; */
+	}
 
-    >thead>tr:first-child {
-        >:first-child {
-            border-top-left-radius: var(--radius);
-        }
-    }
-    >thead>tr:first-child {
-        >:last-child {
-            border-top-right-radius: var(--radius);
-        }
-    }
-    >tbody>tr:last-child {
-        >:first-child {
-            border-bottom-left-radius: var(--radius);
-        }
-    }
-    >tbody>tr:last-child {
-        >:last-child {
-            border-bottom-right-radius: var(--radius);
-        }
-    }
-    /*pseudo-class*/
-    tbody>tr {
-        &:nth-child(even) {
-            &>td{
-            background-color: #ddd;
-            }
-        }
+	> thead > tr:first-child {
+		> :first-child {
+			border-top-left-radius: var(--radius);
+		}
+	}
+	> thead > tr:first-child {
+		> :last-child {
+			border-top-right-radius: var(--radius);
+		}
+	}
+	> tbody > tr:last-child {
+		> :first-child {
+			border-bottom-left-radius: var(--radius);
+		}
+	}
+	> tbody > tr:last-child {
+		> :last-child {
+			border-bottom-right-radius: var(--radius);
+		}
+	}
+	/*pseudo-class*/
+	tbody > tr {
+		&:nth-child(even) {
+			& > td {
+				background-color: #ddd;
+			}
+		}
 
-        &:nth-child(odd) {
-            &>td{
-            background-color: #eee;
-            }
-        }
-    }
-    
-
+		&:nth-child(odd) {
+			& > td {
+				background-color: #eee;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: 500px) {
-  #table-container{  
-        flex-direction: column;
-    }
+	#table-container {
+		flex-direction: column;
+	}
 }
