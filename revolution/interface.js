@@ -20,6 +20,9 @@
 		handlers: {
 			enter() {
 				try {
+					window.root = mathField.__controller.root;
+					console.log(mathField.__controller.root);
+					console.log(text(mathField.__controller.root));
 					const fn = math.compile(text(mathField.__controller.root));
 					settings.fn = (x) => fn.eval({ x });
 
@@ -125,6 +128,7 @@
 	}
 
 	/* super hacky, may not work */
+	/* converts text formula to an evaluable formula */
 	function text(node) {
 		if (node.letter) return node.letter;
 		if (node.ctrlSeq === "\\cdot ") return "*";
