@@ -1,5 +1,5 @@
 // initially copied from https://ysulyma.github.io/tools/revolution/api-three.js
-import BezierEasing from bezier-BezierEasing;
+import BezierEasing from bezier-easing;
 
 const { cos, sin, PI } = Math,
 	TWOPI = 2 * PI;
