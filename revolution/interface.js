@@ -149,10 +149,12 @@
 			}
 		}
 
-		return node.foldChildren(
-			node.ctrlSeq || "",
-			(latex, child) => latex + text(child),
-		);
+		const finalLatex = node.foldChildren(node.ctrlSeq || "", (latex, child) => {
+			console.log(latex, child);
+			return latex + text(child);
+		});
+		console.log(finalLatex);
+		return finalLatex;
 	}
 
 	function fixMathJax() {
