@@ -194,6 +194,7 @@
 			function update(t) {
 				const progress = Math.min((t - start) / duration, 1);
 				console.log(start, t);
+				graph.geometry = revolutionGeometry(progress * TWOPI);
 				if (progress < 1) {
 					requestAnimationFrame(update);
 				}
