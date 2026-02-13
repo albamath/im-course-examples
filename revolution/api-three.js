@@ -190,7 +190,7 @@
 			const start = performance.now();
 
 			/** duration in milliseconds **/
-			duration = 1000;
+			duration = 2000;
 			function update(t) {
 				const progress = Math.min((t - start) / duration, 1);
 				console.log(start, t);
