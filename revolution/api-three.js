@@ -187,6 +187,10 @@
 
 	window.api3 = {
 		animate() {
+			function update(t) {
+				console.log(StaticRange, t);
+			}
+			requestAnimationFrame(update);
 			graph.geometry = revolutionGeometry(PI);
 		},
 		update(o) {
