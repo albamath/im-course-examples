@@ -187,11 +187,18 @@
 
 	window.api3 = {
 		animate() {
-			const start = performance.now;
+			const start = performance.now();
+
+			/** duration in milliseconds **/
+			duration = 1000;
 			function update(t) {
+				const progress = Math.min((t - start) / duration, 1);
 				console.log(start, t);
+				if (progress < 1) {
+					requestAnimationFrame(update);
+				}
 			}
-			requestAnimationFrame(update);
+			requestAnimationFrame(update); // for the first call
 			graph.geometry = revolutionGeometry(PI);
 		},
 		update(o) {
