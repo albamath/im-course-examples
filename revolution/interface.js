@@ -74,6 +74,10 @@
 		api3.update({ showGraph: settings.showGraph });
 	});
 
+	$("#animate").addEventListener("click", (e) => {
+		api3.animate();
+	});
+
 	/* miscellaneous other init */
 	MathJax.Hub.Config({
 		// make mostly transparent

@@ -186,6 +186,9 @@
 	}
 
 	window.api3 = {
+		animate() {
+			graph.geometry = revolutionGeometry(PI);
+		}
 		update(o) {
 			Object.assign(settings, o);
 
