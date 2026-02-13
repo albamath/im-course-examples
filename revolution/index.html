@@ -81,7 +81,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.15.0/math.min.js"></script>
 
     <script src="./interface.js"></script>
-    <script src="./api-three.js"></script>
+    <script src="./api-three.js" type="module"></script>
     <script src="./api-two.js"></script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.182.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.182.0/examples/jsm/"
+        }
+      }
+    </script>
+
   </body>
 </html>
