@@ -1,5 +1,5 @@
 // initially copied from https://ysulyma.github.io/tools/revolution/api-three.js
-import BezierEasing from bezier-easing;
+import BezierEasing from "bezier-easing";
 
 const { cos, sin, PI } = Math,
 	TWOPI = 2 * PI;
@@ -191,9 +191,11 @@ window.api3 = {
 		const start = performance.now();
 
 		/** duration in milliseconds **/
-		duration = 2000;
+		const duration = 2000;
+		const easeInOutCubic = BezierEasing(0.65, 0, 0.35, 1);
+		const easing = easeInOutCubic;
 		function update(t) {
-			const progress = Math.min((t - start) / duration, 1);
+			const progress = easing(Math.min((t - start) / duration, 1));
 			console.log(start, t);
 			graph.geometry = revolutionGeometry(progress * TWOPI);
 			if (progress < 1) {
