@@ -187,8 +187,9 @@
 
 	window.api3 = {
 		animate() {
+			const start = performance.now;
 			function update(t) {
-				console.log(StaticRange, t);
+				console.log(start, t);
 			}
 			requestAnimationFrame(update);
 			graph.geometry = revolutionGeometry(PI);
