@@ -141,8 +141,8 @@
 		scene.add(disks);
 	}
 
-	function revolutionGeometry() {
-		const surface = revolution(settings.fn, settings.a, settings.b);
+	function revolutionGeometry(maxAngle = TWOPI) {
+		const surface = revolution(settings.fn, settings.a, settings.b, maxAngle);
 
 		return new ParametricGeometry(
 			(u, v) => new Vector3(...surface(u, v)),
@@ -176,10 +176,10 @@
 		}
 	}
 
-	function revolution(f, a, b) {
+	function revolution(f, a, b, maxAngle) {
 		return (s, t) => {
 			const x = a + s * (b - a),
-				angle = t * TWOPI;
+				angle = t * maxAngle;
 
 			return [x, f(x) * cos(angle), f(x) * sin(angle)];
 		};
