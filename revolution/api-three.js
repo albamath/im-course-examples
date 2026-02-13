@@ -186,6 +186,9 @@ function revolution(f, a, b, maxAngle) {
 	};
 }
 
+/** For calling animation **/
+let animationRequest;
+
 window.api3 = {
 	animate() {
 		const start = performance.now();
@@ -199,10 +202,16 @@ window.api3 = {
 			console.log(start, t);
 			graph.geometry = revolutionGeometry(progress * TWOPI);
 			if (progress < 1) {
-				requestAnimationFrame(update);
+				animationRequest = requestAnimationFrame(update);
 			}
 		}
-		requestAnimationFrame(update); // for the first call
+
+		// cancel previous animations if  they're running
+		if (animationRequest) { 
+			cancelAnimationFrame(animationRequest);
+		}
+		// start new animation
+		animationRequest = requestAnimationFrame(update); // for the first call
 		graph.geometry = revolutionGeometry(PI);
 	},
 	update(o) {
