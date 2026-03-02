@@ -86,15 +86,15 @@ function generateCrossSection() {
   const existing = scene.getObjectByName("section");
   const resolution = 64;
 
-  const edges = marchingSquares(
-    -5,
-    5,
-    -5,
-    5,
-    (x, y) => y ** 2 - x ** 3 - state.a * x - state.b + state.a,
-    state.a,
-    resolution,
-  );
+  const edges = marchingSquares({
+    xMin: -5,
+    xMax: 5,
+    yMin: -5,
+    yMax: 5,
+    zFunc: (x, y) => y ** 2 - x ** 3 - state.a * x - state.b + state.a,
+    c: state.a,
+    resolution: resolution,
+});
 
   const lineGeometry = new LineSegmentsGeometry().setPositions(
     edges.reduce((a, b) => a.concat(b)),
@@ -117,18 +117,19 @@ function generateCrossSection() {
 const curve = document.getElementById("svg-curve");
 
 function update2D() {
-  const edges = marchingSquares(
-    -5,
-    5,
-    -5,
-    5,
-    (x, y) => y ** 2 - x ** 3 - state.a * x - state.b,
-    0,
-    128,
-  );
+  const edges = marchingSquares({
+    xMin: -5,
+    xMax: 5,
+    yMin: -5,
+    yMax: 5,
+    zFunc: (x, y) => y ** 2 - x ** 3 - state.a * x - state.b,
+    c: 0,
+    resolution: 128,
+});
 
   const path = [];
   for (let i = 0; i < edges.length; i += 2) {
+    // M = moves to absolute position
     path.push(`M ${edges[i][0]} ${edges[i][1]}`);
     path.push(`L ${edges[i + 1][0]} ${edges[i + 1][1]}`);
   }
