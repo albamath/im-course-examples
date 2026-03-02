@@ -47,6 +47,10 @@ for (const config of pointLights) {
 const state = {
   a: document.getElementById("range-a").valueAsNumber,
   b: document.getElementById("range-b").valueAsNumber,
+  xMin: -5,
+  xMax: 5,
+  yMin: -5,
+  yMax: 5
 };
 
 /**
@@ -140,10 +144,10 @@ const curve = document.getElementById("svg-curve");
 
 function update2D() {
   const edges = marchingSquares({
-    xMin: -5,
-    xMax: 5,
-    yMin: -5,
-    yMax: 5,
+    xMin: state.xMin,
+    xMax: state.xMax,
+    yMin: state.yMin,
+    yMax: state.yMax,
     zFunc: (x, y) => y ** 2 - x ** 3 - state.a * x - state.b,
     c: 0,
     resolution: 128,
