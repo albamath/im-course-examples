@@ -57,12 +57,12 @@ function generateModuli() {
 
   const resolution = 64;
 
-  const moduliGeometry = marchingCubes(
-    (x, y, z) => y ** 2 - x ** 3 - z * x - state.b,
-    -5,
-    5,
-    resolution,
-  );
+  const moduliGeometry = marchingCubes({
+    fn: (x, y, z) => y ** 2 - x ** 3 - z * x - state.b,
+    axisMin: -5,
+    axisMax: 5,
+    size: resolution,
+});
 
   if (existing) {
     existing.geometry = moduliGeometry;
@@ -129,6 +129,7 @@ function update2D() {
 
   const path = [];
   for (let i = 0; i < edges.length; i += 2) {
+    //backticks ` ` are used to push strings 
     // M = moves to absolute position
     path.push(`M ${edges[i][0]} ${edges[i][1]}`);
     path.push(`L ${edges[i + 1][0]} ${edges[i + 1][1]}`);
