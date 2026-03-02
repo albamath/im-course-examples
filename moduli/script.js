@@ -44,13 +44,15 @@ for (const config of pointLights) {
   scene.add(pointLight);
 }
 
+const viewBox = document.querySelector("svg").viewBox.baseVal;
+
 const state = {
   a: document.getElementById("range-a").valueAsNumber,
   b: document.getElementById("range-b").valueAsNumber,
-  xMin: -5,
-  xMax: 5,
-  yMin: -5,
-  yMax: 5
+  xMin: viewBox.x,
+  xMax: viewBox.x + viewBox.width,
+  yMin: viewBox.y,
+  yMax: viewBox.y + viewBox.height
 };
 
 /**
