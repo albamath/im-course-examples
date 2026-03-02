@@ -96,6 +96,28 @@ function generateCrossSection() {
     resolution: resolution,
 });
 
+
+//question, what does reduce do ?
+console.log(edges);
+console.log(edges.reduce((acc,curr) => acc.concat(curr)));
+// reduce flattens the array !
+// in the console
+/*
+edges = ["a", "b", "c", "d"];
+var final = edges.reduce([acc,curr] =>{
+  console.log({acc,curr});
+  return acc.concat(curr);
+  })
+
+var edges = [
+0,1,2,3,4,5,6,7,8];
+edges.filter(x => x ... something
+edges.reduce((acc,curr) => {
+  if (curr %2 != 0) return acc;
+
+  })
+*/
+
   const lineGeometry = new LineSegmentsGeometry().setPositions(
     edges.reduce((a, b) => a.concat(b)),
   );
