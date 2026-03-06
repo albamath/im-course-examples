@@ -146,6 +146,7 @@ const dragEvents: DragListener = {
     // add dragging cursor
     document.body.classList.add("dragging");
   },
+  //_ prefix signals that this parameter is intentionnally not used
   move: (_e, hit) => {
     // convert to SVG coordinates
     const [, svgY] = screenToSVG(svg, hit.x, hit.y);

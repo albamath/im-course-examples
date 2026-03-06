@@ -18,6 +18,7 @@ body {
   padding: 1em;
 }
 
+/* dragging cursors */
 .draggable {
   cursor: grab;
   cursor: -webkit-grab;
