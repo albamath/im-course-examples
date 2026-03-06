@@ -1,8 +1,8 @@
 import type katexTypes from "katex";
 
-import { type DragListener, dragHelper, screenToSVG } from "./drag-utils-2d.js";
+import { $, $svg } from "../lib/utils.js";
 
-import { $, $svg } from "/lib/utils.js";
+import { type DragListener, dragHelper, screenToSVG } from "./drag-utils-2d.js";
 
 declare const katex: typeof katexTypes;
 
