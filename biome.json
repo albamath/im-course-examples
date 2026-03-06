@@ -41,7 +41,7 @@
       "!*.code-workspace",
       "!package*.json",
       "!tsconfig.json",
-      "!*.js"
+      "!**/*.js"
     ]
   },
   "formatter": {
