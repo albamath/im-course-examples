@@ -4,8 +4,10 @@ import { LineMaterial } from "three/addons/lines/LineMaterial.js";
 import { LineSegments2 } from "three/addons/lines/LineSegments2.js";
 import { LineSegmentsGeometry } from "three/addons/lines/LineSegmentsGeometry.js";
 
-import { marchingCubes, marchingSquares } from "/lib/graphics.js";
-import { makeScene } from "/lib/three-utils.js";
+// relative import 
+// (the alternative would be to use the html base element)
+import { marchingCubes, marchingSquares } from "../lib/graphics.js";
+import { makeScene } from "../lib/three-utils.js";
 
 const container = document.getElementById("moduli");
 
