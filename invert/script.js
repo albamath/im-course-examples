@@ -1,5 +1,5 @@
 import { dragHelper, screenToSVG } from "./drag-utils-2d.js";
-import { $, $svg } from "/lib/utils.js";
+import { $, $svg } from "../lib/utils.js";
 /* ------------------------- configuration ------------------------- */
 const a = -5, b = 5;
 /** function we want to plot */
