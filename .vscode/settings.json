@@ -1,3 +1,12 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib"
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.js": true,
+    "**/*.js.map": true,
+    "**/Thumbs.db": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
